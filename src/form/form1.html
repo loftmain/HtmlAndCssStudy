@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form 기본 속성</title>
+  </head>
+  <body>
+    <h1>2.4.1 Form 기본 속성</h1>
+
+    <h3>폼 동작 방식</h3>
+
+    <ol type="1">
+      <li>웹 페이지에 있는 form에 데이터를 입력</li>
+      <li>웹 페이지 내 액션이 일어나게 되면 데이터는 웹 서버로 이동</li>
+      <li>웹 서버는 데이터를 처리하기 위해 APP을 호출, 이때 APP은
+        물리적으로 별도의 서버일 수 있음</li>
+      <li>필요에 따라 APP은 DB로 데이터를 전송, 이때 DB는 물리적으로
+        별도의 서버일 수도 있음</li>
+      <li>DB에서 CRUD 작업이 일어나고 작업 결과를 APP으로, WEB으로
+        전송</li>
+      <li>웹 서버는 받은 결과를 Client 브라우저에게 보냄</li>
+      <li>사용자 브라우저는 Response 받은 페이지를 렌더링하여 사용자에게 보여줌</li>
+    </ol>
+    <p>Form의 속성은 다음과 같이 이루어져 있습니다.</p>
+    <dl>
+      <dt><strong>action</strong></dt>
+        <dd>입력 값을 전송할 페이지를 나타냅니다.</dd>
+      <dt><strong>method</strong></dt>
+        <dd>폼의 데이터를 전송할 방법을 정의합니다. method의
+          속성에는 get과 post가 있습니다. get은 웹 서버에 데이터를
+          요청할 때 사용하며, 주소에 데이터를 입력하는 방식이고,
+          post는 파일을 올리거나, 보안이 필요한 데이터를 전송할 때 등
+          사용됩니다. 또한, 주소에 입력 내용이 나타나지 않도록 합니다.</dd>
+      <dt><strong>name</strong></dt>
+        <dd>폼 이름을 지정합니다.</dd>
+    </dl>
+
+    <hr>
+
+    <h1>2.4.2 input의 기본 속성</h1>
+    <p>Input은 사용자가 다양하게 폼 태그에 입력할 수 있는 공간을 만들어 주고,
+      사용자에게 정보를 입력받습니다.</p>
+    <p>Input의 속성은 아래 표와 같이 이루어져 있습니다.</p>
+    <dl>
+      <dt><strong>type</strong></dt>
+        <dd>태그 모양을 다양하게 변경할 수 있습니다. Type에서는 text, radio, checkbox,
+        password, button 등을 지정할 수 있습니다.</dd>
+      <dt><strong>name</strong></dt>
+        <dd>태그 이름을 지정합니다.</dd>
+      <dt><strong>readonly</strong></dt>
+        <dd>태그를 읽기전용으로 합니다.</dd>
+      <dt><strong>maxlength</strong></dt>
+        <dd>최대 글자 수를 지정합니다.</dd>
+      <dt><strong>required</strong></dt>
+        <dd>필수 태그로 지정됩니다. 필수 태그를 입력하지 않고,
+          submit 버튼을 누르면 에러가 떠 데이터가 전송되지 않습니다.</dd>
+      <dt><strong>autofocus</strong></dt>
+        <dd>웹 페이지가 로딩 되면 이 속성을 지정한 태그로 포커스가 바뀝니다.</dd>
+      <dt><strong>placeholder</strong></dt>
+        <dd>입력할 값에 대한 힌트를 줍니다.</dd>
+      <dt><strong>pattern</strong></dt>
+        <dd>정규표현식을 사용하여 특정 범위 내의 유효한 값을 입력 받을 때
+          사용합니다.</dd>
+    </dl>
+
+    <hr>
+
+    <h1>2.4.3 버튼, 이미지 버튼</h1>
+    <p>일반적인 버튼을 만드려면 type 속성 값을 button으로 지정합니다.
+      폼을 서버에 보내는 데 사용하는 전송 버튼을 만들고 싶으면 type 속성
+      값을 submit으로 지정합니다.<br>
+    전송 버튼에 이미지를 넣고 싶은 경우에는 type 속성 값을 image로 지정하면 됩니다.</p>
+    <form>
+      <input type="button" value=버튼>
+      <input type="submit" value=전송>
+      <input type="image" src="../../mediaimg/1.jpg" height="30">
+    </form>
+
+    <hr>
+
+    <h1>2.4.4 입력필드, 비밀번호, 검색용 입력필드</h1>
+    <p>텍스트를 입력할 수 있는 필드를 만들 시에는 type 속성의 값이 text로 지정하면
+      되는데 텍스트가 한줄로만 입력이 됩니다.<br>
+      비밀번호를 입력할 수 있는 필드를 만들 시에는 type속성을 password로 지정하면
+      됩니다. 문자는 마스크 처리됩니다.</p>
+    <form>
+      <p>사용자명 :
+        <input type="text" size="10"/>
+      </p>
+      <p>
+        비밀번호 :
+        <input type="password" size="10"/>
+      </p>
+    </form>
+    <br>
+    <p>여러 줄의 텍스트를 입력하고 싶을 때에는 textarea를 사용합니다.
+      textarea의 cols는 너비를 지정하고, rows는 높이를 지정합니다.<br>
+      textarea /textarea사이에 있는 텍스트는 기본값으로 화면에
+      나타나게 됩니다.</p>
+    <form>
+      <p>하고 싶은 말을 적어주세요.</p>
+      <textarea cols="25" rows="5">입력하시게나</textarea>
+    </form>
+    <p>검색어를 입력하는 검색창을 만들고 싶다면 type속성을 search
+      값으로 설정해야 합니다.</p>
+    <form>
+      <input type="search">
+      <input type="submit" value="검색">
+    </form>
+
+    <hr>
+
+    <h1>2.4.5 날짜 및 시간</h1>
+    <p>날짜를 입력할 폼을 만들 때는 type 속성 값을 date로 지정해줍니다.
+      min과 max로 날짜의 범위도 정해 줄 수 있습니다.<br>
+      시간을 입력할 폼을 만들 때에는 type속성 값을 time으로 지정해줍니다.</p>
+    <p>그 밖에도 날짜와 시간과 관련된 폼들이 있는데 아래 표에서 살펴보겠습니다.</p>
+    <ul>
+      <li>연도, 월 표시: month</li>
+      <li>연도, 주 표시: week</li>
+      <li>날짜와 시간 함께 표시: datetime</li>
+      <li>날짜와 시간 함꼐 표시(로컬): datetime-local</li>
+    </ul><br><br>
+    <h2>일정 추가하기</h2>
+    <label>날짜:</label>
+    <input type="date"/>
+    <label>시간:</label>
+    <input type="time"/><br><br>
+    <textarea cols="47">내용</textarea><br><br>
+    <input type="submit" value="확인">
+
+    <hr>
+
+    <h1>2.4.6 범위 및 수치, 컬러</h1>
+    <p>범위 안에서 값을 설정할 수 있는 슬라이드 바 형식의
+      폼을 만들고 싶을 때에는 type의 속성 값을
+      range로 정해줍니다.<br>
+      수를 정할 때에는 type의 속성 값을 number로 정해줍니다.
+      숫자형을 기본으로 합니다.<br>
+      min은 최소값, max는 최대값, value는 기본값, step은 이동할,
+      변경될 크기를 의미합니다.</p>
+    <form>
+      <input type="range" min="0" max="100"/>
+      <input type="number" min="0" max="100"/>
+    </form>
+
+    <p>색을 선택할 수 있는 폼을 만들고 싶다면 type 속성 값을 color로
+      지정해줍니다.</p>
+    <form>
+      당신이 원하는 색상은?
+      <input type="color">
+    </form>
+
+    <hr>
+
+    <h1>2.4.7 라디오, 체크상자, 파일 업로드</h1>
+    <p>라디오 버튼을 사용하면 제시되어 있는 선택 항목중 하나만 선택이
+      가능합니다.<br>
+      type 속성 값을 radio로 지정해줍니다.</p>
+    <label>성별 :
+      <input type="radio" value="man"> 남
+      <input type="radio" value="woman"> 여
+    </label>
+    <p>체크박스는 제시되어 있는 선택 항목 중 0개 이상을 선택할 수 있습니다.
+    type 속성 값을 checkbox로 정의합니다.</p>
+    <form>
+      <p>좋아하는 색깔은?
+        <br>
+      <input type="checkbox" name="color" value="red">red<br>
+      <input type="checkbox" name="color" value="yellow">yellow<br>
+      <input type="checkbox" name="color" value="blue">blue<br>
+      <input type="checkbox" name="color" value="green">green<br>
+      <input type="checkbox" name="color" value="pink">pink<br>
+      </p>
+    </form>
+    <p>파일을 업로드 할 수 있는 폼을 만들 때에는 type의 속성 값을 file로
+      지정해주면 됩니다. 파일 선택 버튼을 클릭하면 창이 열리고 자신이 업로드
+      하고싶은 파일을 선택할 수 있습니다.</p>
+    <form>
+      <p>파일을 선택하세요<br><br>
+      <input type="file"><br><br>
+      <input type="submit" value="업로드">
+    </form>
+
+    <hr>
+
+    <h1>2.4.8 tel, url, email</h1>
+    <p>이메일 주소를 입력 할 폼을 만들 때는 type의 속성 값을 email로 지정합니다.
+      웹 페이지 주소를 입력 할 폼을 만들 때는 type의 속성 값을 url로 지정합니다.
+      전화번호를 입력 할 폼을 만들 때는 type의 속성 값을 tel로 지정합니다.</p>
+    <form>
+      <label>E-mail<label>
+      <input style="margin-left:30px;" type="email"/><br>
+      <label>URL<label>
+      <input style="margin-left:47px;" type="url"/><br>
+      <label>Telephone<label>
+      <input type="tel"/><br><br>
+      <input type="submit" value="확인"/>
+    </form>
+  </body>
+</html>
