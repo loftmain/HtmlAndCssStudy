@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {font-size: 30px; }
+      p:nth-child(1) { font-size:100%; }
+      p:nth-child(2) { font-size:0.5em; }
+      p:nth-child(3) { font-size:50%; }
+      div:nth-child(4) {
+        width:50%;
+        height: 100px;
+        background-color: #FFD9EC;
+        font-size: 50%;
+      }
+      div:nth-child(5) {
+        width: 20%;
+        height: 500px;
+        background-color: #E3C4FF;
+        font-size: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 각 p별 속성을 지정한다. -->
+    <p>이번 예제에서는 width와 height의 속성에 대해서 알아본다.</p><!-- 첫번째 p의 속성을 따른다.-->
+    <p>1. width는 가로의 길이이다.</p>
+    <p>2. height는 가로의 길이이다.</p>
+    <div>
+      <!-- 첫번째 div의 속성을 따른다. -->
+      <br/><br/> 가로 width는 50%이고, 세로 height는 100%이다.
+    </div>
+    <div>
+      <!-- 두번째 div의 속성을 따른다. -->
+      <br/><br/> 가로 width는 30%이고, 세로 height는 150px이다.
+    </div>
+  </body>
+</html>
